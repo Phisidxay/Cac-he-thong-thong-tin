@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Text Translation</title>
+    <style>
+      body {
+			font-family: Arial, sans-serif;
+			background-color: #5a5a5a;
+		}
+		h1 {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 50px;
+			color: #fff;
+			text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1100, 0 0 70px #ff1100, 0 0 80px #ff1100, 0 0 100px #ff1100, 0 0 150px #ff1100;
+			text-align: center;
+			margin-top: 50px;
+		}
+	    label{
+	font-family: 'Open Sans', sans-serif;
+			font-size: 25px;
+			color: #fff;
+			text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1100, 0 0 70px #ff1100, 0 0 80px #ff1100, 0 0 100px #ff1100, 0 0 150px #ff1100;
+			text-align: center;
+			margin-top: 50px;
+		}
+		h2 {
+			font-family: 'Open Sans', sans-serif;
+			font-size: 40px;
+			color: #fff;
+			text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1100, 0 0 70px #ff1100, 0 0 80px #ff1100, 0 0 100px #ff1100, 0 0 150px #ff1100;
+			text-align: center;
+			margin-top: 50px;
+		}
+        p {
+				font-family: 'Open Sans', sans-serif;
+			font-size: 25px;
+			color: #fff;
+			text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1100, 0 0 70px #ff1100, 0 0 80px #ff1100, 0 0 100px #ff1100, 0 0 150px #ff1100;
+			text-align: center;
+			margin-top: 50px;
+		}
+		input {
+		background-color: #ff1100;
+			color: #fff;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 18px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 30px;
+			box-shadow: 0 0 20px #fff;
+			cursor: pointer;
+			transition: box-shadow 0.3s ease-in-out;
+		}
+		select {
+		background-color: #f00;
+			color: #fff;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 15px;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 30px;
+			box-shadow: 0 0 20px #fff;
+			cursor: pointer;
+			transition: box-shadow 0.3s ease-in-out;
+		}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <h1>Text Translation</h1>
+    <form method="post" action="/translate">
+      <label for="source_text">Source Text:</label>
+
+      <textarea name="source_text" id="source_text" required></textarea><br><br>
+      <label  for="source_lang">Source Language:</label>
+      <select name="source_lang" id="source_lang" required>
+        <option value="English">English</option>
+        <option value="German">German</option>
+        <option value="French">French</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="Thailand">Thailand</option>
+        <!-- Add more options for supported languages -->
+
+      </select><br><br>
+      <label for="target_lang">Target Language:</label>
+      <select name="target_lang" id="target_lang" required>
+        <option value="English">English</option>
+        <option value="German">German</option>
+        <option value="French">French</option>
+        <option value="Spanish">Spanish</option>
+        <option value="Vietnam">Vietnam</option>
+        <option value="Thailand">Thailand</option>
+        <!-- Add more options for supported languages -->
+      </select><br><br>
+      <input type="submit" value="Translate">
+    </form>
+    {% if target_text %}
+      <h2>Result:</h2>
+      <p><b style="box">Source Text:</b> {{ source_text }}</p>
+      <p><b>Target Text:</b> {{ target_text }}</p>
+    {% endif %}
+    </div>
+  </body>
+</html>
